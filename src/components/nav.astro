@@ -2,8 +2,8 @@
 import "../styles/global.css";
 import Logo from "../assets/logo-white.png";
 ---
-<header class="relative w-full">
-    <nav class="menu-desktop bg-[#1c4e50] w-full relative py-4 px-5 md:px-16 lg:px-27 xl:px-34">
+<header class="sticky top-0 z-40 w-full">
+    <nav class="menu-desktop bg-dark-grey w-full sticky top-0 z-40 py-4 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60" style="box-shadow: 0px 2px 9px 3px #00000078;">
         <div class="w-full flex justify-between items-center">
             <img src={Logo.src} alt="" class="w-36" />
             <div class="menu-amburger lg:hidden">
@@ -12,18 +12,18 @@ import Logo from "../assets/logo-white.png";
             <div class="hidden lg:block">
                 <div class="flex items-center">
                     <ul class="flex text-white">
-                        <li class="px-2"><a href="/">Home</a></li>
-                        <li class="px-2"><a href="/chi-siamo">Chi siamo</a></li>
-                        <li class="px-2"><a href="/cosa-facciamo">Cosa facciamo</a></li>
+                        <li class="px-2 hover:border-b hover:border-[#c3dfdf] hover:-translate-y-1.5 transition-all duration-200"><a href="/">Home</a></li>
+                        <li class="px-2 hover:border-b hover:border-[#c3dfdf] hover:-translate-y-1.5 transition-all duration-200"><a href="/chi-siamo">Chi siamo</a></li>
+                        <li class="px-2 hover:border-b hover:border-[#c3dfdf] hover:-translate-y-1.5 transition-all duration-200"><a href="/cosa-facciamo">Cosa facciamo</a></li>
                     </ul>
                     <div class="">
-                        <a href="contatti.html" class="inline-flex mx-2 py-2 px-8 items-center justify-center text-base font-semibold border border-lime-500 hover:border-white hover:bg-white rounded-full transition duration-300 bg-lime-300 text-[#1c4e50]">Contatti</a>
+                        <a href="/contatti" class="inline-flex mx-2 py-2 px-8 items-center justify-center text-base font-semibold border bg-green-yellow border-green-yellow hover:border-white hover:bg-white rounded-full transition duration-300 bg-lime-300 text-dark-grey">Contatti</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <nav class="menu-mobile lg:hidden h-full bg-[#1c4e50] fixed top-0 right-0 w-1/2 md:w-1/3" style="box-shadow: 0px 0px 16px #00000070;">
+    <nav class="menu-mobile lg:hidden h-full bg-dark-grey fixed z-50 top-0 right-0 w-1/2 md:w-1/3" style="box-shadow: 0px 0px 16px #00000070;">
         <div class="w-full h-full py-8.5 flex flex-col justify-between items-end">
         <div class="gruppo-menu w-full">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#ffffff"></path> </g></svg>
@@ -33,7 +33,7 @@ import Logo from "../assets/logo-white.png";
             <li class="w-full py-2 hover:border-b hover:border-[#c3dfdf] hover:bg-[#134343] transition-all duration-200"><a href="/cosa-facciamo" class="px-6">Cosa facciamo</a></li>
         </ul>
         </div>
-            <div class="w-full px-8"><a href="contatti.html" class="w-full flex justify-center py-2 px-8 text-base font-semibold border border-lime-500 hover:border-white hover:bg-white rounded-full transition duration-300 bg-lime-300 text-[#1c4e50]">Contatti</a></div>
+            <div class="w-full px-8"><a href="contatti.html" class="w-full flex justify-center py-2 px-8 text-base font-semibold border bg-green-yellow border-green-yellow hover:border-white hover:bg-white rounded-full transition duration-300 bg-color-dark-grey text-dark-grey">Contatti</a></div>
         </div>
     </nav>
 </header>

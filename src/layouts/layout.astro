@@ -20,12 +20,12 @@ const { namePagina } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <title>{ namePagina }</title>
 </head>
-<body class="m-0 p-0">
+<body class="m-0 p-0 overflow-x-hidden">
     <Menu />
     <slot />
 </body>
 </html>
 <style is:global>
     h1, h2, h3{font-family: "Figtree", sans-serif;}
-    p, li, a{font-family: "Google Sans", sans-serif;}
+    p, li, a, span, button{font-family: "Google Sans", sans-serif;}
 </style>

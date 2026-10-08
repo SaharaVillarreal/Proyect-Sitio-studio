@@ -1,0 +1,26 @@
+---
+import imgPrincipal from "../assets/img-principal.jpg"
+import { getImage } from 'astro:assets';
+const optimizedBackground2 = await getImage({ src: imgPrincipal, format: 'webp' });
+---
+
+<section class="chi-siamo w-full pb-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
+        <div class="flex items-center py-1 border-b-2 border-b-[#c2c2c250]">
+            <div class="w-2 h-2 rounded-full bg-green-yellow"></div>
+            <span class="text-lg px-2">Marketing solution</span>
+        </div>
+        <div class="contenido-introduzione pt-12 flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2  h-72 md:h-96 lg:h-140 bg-cover rounded-xl bg-no-repeat lg:pr-8" style={`background-image: url('${optimizedBackground2.src}');`}></div>
+            <div class="lg:pl-8 w-full lg:w-1/2">
+                <h2 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold pt-8">Introduzione aziendale</h2>
+                <p class="text-lg lg:text-xl 2xl:text-3xl opacity-80 pt-2">L’Home Page è la parte più importate di tutto il sito, perché l’utente vuole conoscere subito le informazioni che gli servono, ma deve anche essere coinvolgente per far si che il potenziale cliente possa proseguire la navigazione e trovare il prodotto/servizio che cerca.<br> In questa sezione è necessario inserire brevi informazioni su:</p>
+                <ul class="list-disc text-lg lg:text-xl 2xl:text-3xl opacity-80 pl-6 py-4">
+                    <li>Chi siete.</li>
+                    <li>Da quanto tempo ve ne occupate.</li>
+                    <li>Cosa fate (prodotto/servizio).</li>
+                    <li>Perché avete scelto di proporre questo prodotto/servizio.</li>
+                </ul>
+                <a href="/cosa-facciamo" class="inline-flex my-2 py-2 px-4 md:px-8 items-center justify-center text-base text-dark-grey font-semibold border bg-white border-dark-grey hover:bg-dark-grey rounded-full transition duration-300 hover:text-white">Contatti</a>
+            </div>
+        </div>
+</section>
