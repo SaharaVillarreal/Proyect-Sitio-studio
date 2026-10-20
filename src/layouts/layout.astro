@@ -1,11 +1,9 @@
 ---
-import "../styles/global.css"
-import Menu from "../components/nav.astro"
+import "../styles/global.css";
+import Menu from "../components/nav.astro";
+import { getPageTitle } from "../utils/page-titles";
 
-interface Props {
-    namePagina: string,
-}
-const { namePagina } = Astro.props;
+const namePagina = getPageTitle(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -18,7 +16,8 @@ const { namePagina } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-    <title>{ namePagina }</title>
+    <title>{namePagina} | Proyect I</title>
+    <meta name="description" content={`Página ${namePagina} de Proyect I`}>
 </head>
 <body class="m-0 p-0 overflow-x-hidden">
     <Menu />

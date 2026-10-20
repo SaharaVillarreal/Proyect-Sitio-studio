@@ -1,14 +1,15 @@
 ---
 import Main from "../layouts/layout.astro"
-import Introduccion from "../components/introducion.astro"
 import imgServizio1 from "../assets/img-service.jpg"
 import imgServizio2 from "../assets/img-service2.webp"
 import imgServizio3 from "../assets/img-service3.jpg"
 import imgHero from "../assets/img-hero.jpg"
+import imgPrincipal from "../assets/img-principal.jpg"
 import { getImage } from 'astro:assets';
 const optimizedBackground = await getImage({ src: imgHero, format: 'webp' });
 import imgFAQ from "../assets/img-faq.jpg"
-const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
+const optimizedBackground2 = await getImage({ src: imgPrincipal, format: 'webp' });
+const optimizedBackground3 = await getImage({ src: imgFAQ, format: 'webp' });
 ---
 
 <Main namePagina="Proyect I">
@@ -17,7 +18,7 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
         <div class="relative w-full  md:w-3/4 lg:w-3/4 py-15 lg:py-24 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
             <p class="bg-green-yellow w-fit text-lg font-semibold text-dark-grey py-2 px-4 mb-4 rounded-full">Marketing solution</p>
             <h1 class="text-white text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold pt-2.5 border-t-2 border-t-white">Inserire in questo spazio uno slogan dell'azienda</h1>
-            <p class="text-white pt-2 text-lg lg:text-xl 2xl:text-3xl leading-6">Inserire qui una breve introduzione dell’azienda, la tipologia di prodotti che offre e a chi sono rivolti.</p>
+            <p class="text-white pt-2 text-lg leading-6">Inserire qui una breve introduzione dell’azienda, la tipologia di prodotti che offre e a chi sono rivolti.</p>
         </div>
     </section>
     <section class="cta w-full py-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
@@ -29,12 +30,31 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
         </div>
         </div>
     </section>
-    <Introduccion/>
+    <section class="chi-siamo w-full pb-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
+        <div class="flex items-center py-1 border-b-2 border-b-[#c2c2c260]">
+            <div class="w-2 h-2 rounded-full bg-green-yellow"></div>
+            <span class="text-lg px-2">Marketing solution</span>
+        </div>
+        <div class="contenido-introduzione pt-12 flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2  h-72 md:h-96 lg:h-140 bg-cover rounded-xl bg-no-repeat lg:pr-8" style={`background-image: url('${optimizedBackground2.src}');`}></div>
+            <div class="lg:pl-8 w-full lg:w-1/2">
+                <h2 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold pt-8">Introduzione aziendale</h2>
+                <p class="text-lg opacity-80 pt-2">L’Home Page è la parte più importate di tutto il sito, perché l’utente vuole conoscere subito le informazioni che gli servono, ma deve anche essere coinvolgente per far si che il potenziale cliente possa proseguire la navigazione e trovare il prodotto/servizio che cerca.<br> In questa sezione è necessario inserire brevi informazioni su: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident aliquam in est nulla tenetur exercitationem tempore, unde fugit amet modi, repudiandae, excepturi quis quasi labore possimus. Quos, sunt. Delectus, reprehenderit!</p>
+                <ul class="list-disc text-lg opacity-80 pl-6 py-4">
+                    <li>Chi siete.</li>
+                    <li>Da quanto tempo ve ne occupate.</li>
+                    <li>Cosa fate (prodotto/servizio).</li>
+                    <li>Perché avete scelto di proporre questo prodotto/servizio.</li>
+                </ul>
+                <a href="/chi-siamo" class="inline-flex my-2 py-2 px-4 md:px-8 items-center justify-center text-base text-dark-grey font-semibold border bg-white border-dark-grey hover:bg-dark-grey rounded-full transition duration-300 hover:text-white">Chi siamo</a>
+              </div>
+        </div>
+    </section>
     <section class="servizi bg-dark-grey w-full py-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
         <section class="flex flex-col lg:flex-row justify-between lg:items-center pb-12">
           <div class="pr-4 lg:pr-0 w-full lg:w-2/3">
             <h2 class="text-white font-semibold text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl pb-2">Cosa facciamo</h2>
-            <p class="text-white text-lg lg:text-xl 2xl:text-3xl pb-6 lg:pb-0">Inserire qui una breve descrizione dei servizi che saranno elencati nella sezione sottostante.</p>
+            <p class="text-white text-lg pb-6 lg:pb-0">Inserire qui una breve descrizione dei servizi che saranno elencati nella sezione sottostante.</p>
           </div>
             <a href="/cosa'facciamo" class="inline-flex mr-2 py-4 px-2 md:px-8 items-center justify-center text-base font-semibold border bg-green-yellow border-green-yellow hover:border-white hover:bg-white rounded-full transition duration-300 bg-lime-300 text-dark-grey">Tutti i servizi</a>
         </section>
@@ -45,7 +65,7 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
             <article class="slide flex flex-col w-full lg:flex-row items-center shrink-0">
             <div class="w-full lg:w-1/2 p-8 flex flex-col">
               <h3 class="text-dark-grey text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-semibold pb-4">Servizio 1</h3>
-              <p class="text-lg lg:text-xl 2xl:text-3xl leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
+              <p class="text-lg leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
             <div class="arrow flex pt-4">
               <button id="prev-btn" class="cursor-pointer pr-4">
                   <svg width="55px" height="55px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#1C4E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>  
@@ -61,7 +81,7 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
           <article class="slide flex flex-col w-full lg:flex-row items-center shrink-0">
             <div class="w-full lg:w-1/2 p-8 flex flex-col">
               <h3 class="text-dark-grey text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-semibold pb-4">Servizio 2</h3>
-              <p class="text-lg lg:text-xl 2xl:text-3xl leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
+              <p class="text-lg leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
             <div class="arrow flex pt-4">
               <button id="prev-btn" class="cursor-pointer pr-4">
                   <svg width="55px" height="55px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#1C4E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>  
@@ -77,7 +97,7 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
           <article class="slide flex flex-col w-full lg:flex-row items-center shrink-0">
             <div class="w-full lg:w-1/2 p-8 flex flex-col">
               <h3 class="text-dark-grey text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-semibold pb-4">Servizio 3</h3>
-              <p class="text-lg lg:text-xl 2xl:text-3xl leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
+              <p class="text-lg leading-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nisi ab consequatur eveniet ad numquam magnam, architecto odit libero illum harum, atque facilis totam vitae quia sequi dolor, nesciunt maxime.</p>
             <div class="arrow flex pt-4">
               <button id="prev-btn" class="cursor-pointer pr-4">
                   <svg width="55px" height="55px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#1C4E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>  
@@ -204,7 +224,7 @@ const optimizedBackground2 = await getImage({ src: imgFAQ, format: 'webp' });
           </div>
         </div>
       </article>
-      <div class="img-faq relative w-full lg:w-1/2 bg-no-repeat bg-center bg-cover h-96 lg:h-170 xl:h-200" style={`background-image: url('${optimizedBackground2.src}')`}>
+      <div class="img-faq relative w-full lg:w-1/2 bg-no-repeat bg-center bg-cover h-96 lg:h-170 xl:h-200" style={`background-image: url('${optimizedBackground3.src}')`}>
       </div>
     </section>
 </Main>
