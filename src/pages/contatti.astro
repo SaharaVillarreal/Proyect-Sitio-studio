@@ -1,4 +1,5 @@
 ---
+import "../styles/stylePropio.css"
 import Main from "../layouts/layout.astro"
 import NamePagina from "../components/name-page.astro";
 import imgContatti from "../assets/img-contact.jpg"
@@ -8,7 +9,7 @@ const backgroundImgContact = await getImage({src: imgContatti, format: 'webp'});
 
 <Main namePagina="Contatti | Proyect I">
  <NamePagina Description="Inserire qui una breve introduzione della storia dell’azienda, in un massimo di due righe."/>
- <section class="dati-aziendale grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4 pb-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
+ <section class="dati-aziendale grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-4 pb-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60">
     <div class="bg-dark-grey rounded-xl py-8 px-4 w-full flex flex-col items-center">
         <div class="bg-green-yellow p-2 rounded-xl">
         <svg fill="#1C4E50" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M22,5V9L12,13,2,9V5A1,1,0,0,1,3,4H21A1,1,0,0,1,22,5ZM2,11.154V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V11.154l-10,4Z"></path></g></svg>
@@ -45,18 +46,35 @@ const backgroundImgContact = await getImage({src: imgContatti, format: 'webp'});
             <label for="message" class="opacity-80">Richiesta</label>
                 <textarea name="message" id="message" placeholder="Vorrei avere informazione riguardo a...."  class="w-full h-40 py-2 px-3 my-2 rounded-xl border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300"></textarea>    
         </form>
-        <label id="privacy">
-            <input type="checkbox" name="checkbox" id="" class="accent-dark-grey mr-2">
-            <span>Dichiaro di aver letto e compreso l’informativa, ai sensi dell’art. 13 del GDPR, e acconsento al trattamento dei miei dati personali finalizzato alla gestione della mia richiesta di informazioni. <a class="">Visualizza privacy policy</a></span>
-        </label>
-        <button type="submit" class="inline-flex mt-4 mr-4 py-2 px-8 items-center justify-center text-base font-semibold text-white hover:text-dark-grey border bg-dark-grey border-dark-grey hover:border-white hover:bg-green-yellow rounded-full transition duration-300">Invia richiesta</button>
+        <div class="flex items-start">
+            <input type="checkbox" name="checkbox" id="" class="accent-dark-grey mr-2 mt-1">
+            <span>Dichiaro di aver letto e compreso l’informativa, ai sensi dell’art. 13 del GDPR, e acconsento al trattamento dei miei dati personali finalizzato alla gestione della mia richiesta di informazioni. 
+                <button id="open-modal" class="open-modal text-dark-grey cursor-pointer underline">Visualizza privacy policy</button>
+            </span>
+        </div>
+        <div class="modal scrollbar-none fixed inset-0 bg-black/50 items-center justify-center px-8 overflow-y-hidden z-50">
+                <div class="modal-interno bg-white min-w-2xs max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-xl text-start">
+                    <div class="w-full py-4 px-4 lg:px-6 bg-dark-grey flex justify-between items-center">
+                    <h3 class="text-white text-xl font-semibold">Policy & Cookie privacy | PROYECTO I</h3>
+                    <button id="close" class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full  py-4 px-8 scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 overflow-y-auto">
+                        <p class="text-black text-lg">Contenuto della privacy del sito web <br>
+                        //esempio <br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, necessitatibus? Incidunt ducimus, tempore facere aperiam expedita in reprehenderit quos saepe deleniti reiciendis nam consequatur, dolorum, accusantium nostrum esse ab laboriosam!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, necessitatibus? Incidunt ducimus, tempore facere aperiam expedita in reprehenderit quos saepe deleniti reiciendis nam consequatur, dolorum, accusantium nostrum esse ab laboriosam!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, necessitatibus? Incidunt ducimus, tempore facere aperiam expedita in reprehenderit quos saepe deleniti reiciendis nam consequatur, dolorum, accusantium nostrum esse ab laboriosam!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, necessitatibus? Incidunt ducimus, tempore facere aperiam expedita in reprehenderit quos saepe deleniti reiciendis nam consequatur, dolorum, accusantium nostrum esse ab laboriosam!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <button type="submit" class="inline-flex mt-4 mr-4 py-2 px-8 cursor-pointer items-center justify-center text-base font-semibold text-white hover:text-dark-grey border bg-dark-grey border-dark-grey hover:border-white hover:bg-green-yellow rounded-full transition duration-300">Invia richiesta</button>
     </div>
     <div class="img-contatti w-full h-80 lg:h-auto relative bg-cover bg-center rounded-xl" style={`background-image: url('${backgroundImgContact.src}');`}></div>
 </div> 
 </section>
- <section>
-    <a href="">
-        <img src="" alt="">
-    </a>
- </section>
 </Main>
+<script src="../scripts/script.js"></script>
