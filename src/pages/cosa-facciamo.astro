@@ -1,8 +1,170 @@
 ---
+import "../styles/stylePropio.css"
 import Main from "../layouts/layout.astro"
 import NamePagina from "../components/name-page.astro";
+import imgServizio1 from "../assets/img-service.jpg"
+import imgServizio2 from "../assets/img-service2.webp"
+import imgServizio3 from "../assets/img-service3.jpg"
+import imgServizio4 from "../assets/img-service4.jpg"
+import imgServizio5 from "../assets/img-service5.jpg"
 ---
-
 <Main namePagina="Cosa facciamo | Proyect I">
     <NamePagina Description="Inserire qui una breve testo di cosa facciamo o come funziona la nostra azienda che puo aiutare agli altri, in un massimo di due righe."/>
+    <section class="pb-12 px-8 md:px-16 lg:px-27 xl:px-34 2xl:px-60 flex flex-col md:flex-row md:flex-wrap gap-6 ">
+        <article class="relative servizi-modal w-full md:w-[calc(50%-12px)] grow">
+            <div class="relative contenuto-servizio-1 p-8 w-full border-t-4 border-t-green-yellow rounded-xl shadow-md">
+                <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 1</h3>
+                <p class="text-lg py-2">Scrivi una breve introduzione che descriva il prodotto o servizio che offre.</p>
+                <button type="button" data-modal-target="modal-1" class="open-service-modal w-full py-2 mt-2 rounded-full cursor-pointer font-medium border border-dark-grey hover:bg-dark-grey hover:text-white transition-all duration-300">Scoprire di più</button>
+            </div>
+        </article>
+        <article class="relative servizi-modal w-full md:w-[calc(50%-12px)] grow">
+            <div class="contenuto-servizio-2 bg-dark-grey text-white relative p-8 w-full border-t-4 border-t-green-yellow rounded-xl shadow-md">
+                <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 2</h3>
+                <p class="text-lg py-2">Scrivi una breve introduzione che descriva il prodotto o servizio che offre.</p>
+                <button type="button" data-modal-target="modal-2" class="w-full py-2 mt-2 rounded-full cursor-pointer font-medium border hover:bg-white hover:text-dark-grey transition-all duration-300">Scoprire di più</button>
+            </div>
+        </article>
+        <article class="relative servizi-modal w-full">
+            <div class="contenuto-servizio-3 bg-green-yellow relative p-8 w-full border-t-4 border-t-green-yellow rounded-xl shadow-md">
+                <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 3</h3>
+                <p class="text-lg py-2">Scrivi una breve introduzione che descriva il prodotto o servizio che offre.</p>
+                <button type="button" data-modal-target="modal-3" class="w-full py-2 mt-2 rounded-full cursor-pointer font-medium border hover:border-dark-grey hover:bg-dark-grey hover:text-white transition-all duration-300">Scoprire di più</button>
+            </div>
+        </article>
+        <article class="relative servizi-modal w-full md:w-[calc(50%-12px)] grow">
+            <div class="contenuto-servizio-4 relative p-8 w-full border-t-4 border-t-green-yellow rounded-xl shadow-md">
+                <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 4</h3>
+                <p class="text-lg py-2">Scrivi una breve introduzione che descriva il prodotto o servizio che offre.</p>
+                <button type="button" data-modal-target="modal-4" class="w-full py-2 mt-2 rounded-full cursor-pointer font-medium border border-dark-grey hover:bg-dark-grey hover:text-white transition-all duration-300">Scoprire di più</button>
+            </div>
+        </article>
+        <article class="relative servizi-modal w-full md:w-[calc(50%-12px)] grow">
+            <div class="contenuto-servizio-5 bg-dark-grey text-white relative p-8 w-full border-t-4 border-t-green-yellow rounded-xl shadow-md">
+                <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 5</h3>
+                <p class="text-lg py-2">Scrivi una breve introduzione che descriva il prodotto o servizio che offre.</p>
+                <button type="button" data-modal-target="modal-5" class="w-full py-2 mt-2 rounded-full cursor-pointer font-medium border hover:bg-white hover:text-dark-grey transition-all duration-300">Scoprire di più</button>
+            </div>
+        </article>
+    </section>
+        <!-- Modal numero 1 -->
+        <dialog id="modal-1" class="m-auto w-[calc(100%-2rem)] max-w-5xl max-h-[95vh] p-8 border-0 bg-transparent">
+                <div class="modal-interno-modal bg-white rounded-xl min-w-6xs max-w-5xl max-h-[95vh] overflow-hidden">
+                    <div class="title-service pb-4 border-b border-b-[#dbdada] p-8 flex items-center justify-between">
+                        <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 1</h3>
+                        <button type="button" data-modal-close aria-label="Chiudi modal" class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full h-110 overflow-y-scroll lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 contenuto-service p-8 lg:p-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="w-full lg:py-8 lg:pl-8">
+                        <img src={imgServizio1.src} alt="" class="rounded-xl w-full h-52 lg:h-90 object-cover">
+                    </div>
+                    <div class="w-full pr-4 lg:py-8 lg:overflow-y-scroll lg:scrollbar-thin lg:scrollbar-thumb-green-yellow/70 lg:scrollbar-track-green-yellow/20">
+                        <p class="text-lg opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus voluptates earum perferendis minima nemo modi quasi corporis aut, officia, provident laboriosam aliquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, nobis. Excepturi natus dolores quae odio fugit doloremque veniam mollitia culpa exercitationem vitae cupiditate nihil dolore velit, aliquid iste temporibus debitis!</p>
+                        <ul class="opacity-80 text-lg pt-2">
+                            <li>It is a long established fact that.</li>
+                            <li>It is a long established fact that a reader will be distracted.</li>
+                            <li>It is a long established fact that a reader.</li>
+                            <li>It is a long established fact that a reader will.</li>
+                            <li>It is a long established fact.</li>
+                            <li>It is a long established fact.</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </dialog>
+        <!-- Modal numero 2 -->
+        <!-- <dialog id="modal-2" class="modal-service w-full h-full px-8 bg-black/50 scrollbar-none fixed z-50 top-0 left-0 flex items-center justify-center">
+                <div class="modal-interno-modal bg-white rounded-xl min-w-6xs max-w-5xl max-h-[95vh] overflow-hidden">
+                    <div class="title-service pb-4 border-b border-b-[#dbdada] p-8 flex items-center justify-between">
+                        <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 2</h3>
+                        <button id="close-service-modal" data-modal-close class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full h-110 overflow-y-scroll lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 contenuto-service p-8 lg:p-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="w-full lg:py-8 lg:pl-8">
+                        <img src={imgServizio2.src} alt="" class="rounded-xl w-full h-52 lg:h-90 object-cover">
+                    </div>
+                    <div class="w-full pr-4 lg:py-8 lg:overflow-y-scroll lg:scrollbar-thin lg:scrollbar-thumb-green-yellow/70 lg:scrollbar-track-green-yellow/20">
+                        <p class="text-lg opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus voluptates earum perferendis minima nemo modi quasi corporis aut, officia, provident laboriosam aliquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, nobis. Excepturi natus dolores quae odio fugit doloremque veniam mollitia culpa exercitationem vitae cupiditate nihil dolore velit, aliquid iste temporibus debitis!</p>
+                        <ul class="opacity-80 text-lg pt-2">
+                            <li>It is a long established fact that.</li>
+                            <li>It is a long established fact that a reader will be distracted.</li>
+                            <li>It is a long established fact that a reader.</li>
+                            <li>It is a long established fact that a reader will.</li>
+                            <li>It is a long established fact.</li>
+                        </ul>
+                        <p class="text-lg opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus.</p>
+                    </div>
+                    </div>
+                </div>
+        </dialog>
+        Modal numero 3
+        <diadialog id="modal-3" class="modal-service w-full h-full px-8 bg-black/50 scrollbar-none fixed z-50 top-0 left-0 flex items-center justify-center">
+                <div class="modal-interno-modal bg-white rounded-xl min-w-6xs max-w-5xl max-h-[95vh] overflow-hidden">
+                    <div class="title-service pb-4 border-b border-b-[#dbdada] p-8 flex items-center justify-between">
+                        <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 3</h3>
+                        <button id="close-service-modal" data-modal-close class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full h-110 overflow-y-scroll lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 contenuto-service p-8 lg:p-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="w-full lg:py-8 lg:pl-8">
+                        <img src={imgServizio3.src} alt="" class="rounded-xl w-full h-52 lg:h-90 object-cover">
+                    </div>
+                    <div class="w-full pr-4 lg:py-8 lg:overflow-y-scroll lg:scrollbar-thin lg:scrollbar-thumb-green-yellow/70 lg:scrollbar-track-green-yellow/20">
+                        <p class="text-lg opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus voluptates earum perferendis minima nemo modi quasi corporis aut, officia, provident laboriosam aliquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, nobis. Excepturi natus dolores quae odio fugit doloremque veniam mollitia culpa exercitationem vitae cupiditate nihil dolore velit, aliquid iste temporibus debitis!</p>
+                       </div>
+                    </div>
+                </div>
+        </diadialog>
+        Modal numero 4
+        <dialog id="modal-4" class="modal-service w-full h-full px-8 bg-black/50 scrollbar-none fixed z-50 top-0 left-0 flex items-center justify-center">
+                <div class="modal-interno-modal bg-white rounded-xl min-w-6xs max-w-5xl max-h-[95vh] overflow-hidden">
+                    <div class="title-service pb-4 border-b border-b-[#dbdada] p-8 flex items-center justify-between">
+                        <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 4</h3>
+                        <button id="close-service-modal" data-modal-close class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full h-110 overflow-y-scroll lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 contenuto-service p-8 lg:p-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="w-full lg:py-8 lg:pl-8">
+                        <img src={imgServizio4.src} alt="" class="rounded-xl w-full h-52 lg:h-90 object-cover">
+                    </div>
+                    <div class="w-full pr-4 lg:py-8 lg:overflow-y-scroll lg:scrollbar-thin lg:scrollbar-thumb-green-yellow/70 lg:scrollbar-track-green-yellow/20">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus voluptates earum perferendis minima nemo modi quasi corporis aut, officia, provident laboriosam aliquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, nobis. Excepturi natus dolores quae odio fugit doloremque veniam mollitia culpa exercitationem vitae cupiditate nihil dolore velit, aliquid iste temporibus debitis! <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sed veniam blanditiis unde at adipisci fugit dolores ad, iusto in dignissimos! Accusamus porro repellendus corporis dolores deserunt? A, similique magni!.</p>
+                       </div>
+                    </div>
+                </div>
+        </dialog>
+        Modal numero 5
+         <dialog id="modal-5" class="modal-service w-full h-full px-8 bg-black/50 scrollbar-none fixed z-50 top-0 left-0 flex items-center justify-center">
+                <div class="modal-interno-modal bg-white rounded-xl min-w-6xs max-w-5xl max-h-[95vh] overflow-hidden">
+                    <div class="title-service pb-4 border-b border-b-[#dbdada] p-8 flex items-center justify-between">
+                        <h3 class="text-2xl lg:text-3xl font-semibold">Servizio 3</h3>
+                        <button id="close-service-modal" data-modal-close class="pl-2 cursor-pointer">
+                        <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </button>
+                    </div>
+                    <div class="w-full h-110 overflow-y-scroll lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-green-yellow/70 scrollbar-track-green-yellow/20 contenuto-service p-8 lg:p-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="w-full lg:py-8 lg:pl-8">
+                        <img src={imgServizio3.src} alt="" class="rounded-xl w-full h-52 lg:h-90 object-cover">
+                    </div>
+                    <div class="w-full pr-4 lg:py-8 lg:overflow-y-scroll lg:scrollbar-thin lg:scrollbar-thumb-green-yellow/70 lg:scrollbar-track-green-yellow/20">
+                        <p class="text-lg opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus beatae consectetur facere eos omnis tenetur repellendus voluptates earum perferendis minima nemo modi quasi corporis aut, officia, provident laboriosam aliquam!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, nobis. Excepturi natus dolores quae odio fugit doloremque veniam mollitia culpa exercitationem vitae cupiditate nihil dolore velit, aliquid iste temporibus debitis!</p>
+                        <ul class="opacity-80 text-lg pt-2">
+                            <li>It is a long established fact that.</li>
+                            <li>It is a long established fact that a reader will be distracted.</li>
+                            <li>It is a long established fact that a reader.</li>
+                            <li>It is a long established fact that a reader will.</li>
+                            <li>It is a long established fact.</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </dialog> -->
+    <script src="../scripts/script.js"></script>
 </Main>

@@ -24,3 +24,46 @@
     transform: scale(1);
     opacity: 1;
     }
+/* style del modal della pagina cosa-facciamo */
+
+dialog {
+  opacity: 0;
+  transform: scale(0.97);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    display 0.25s allow-discrete,
+    overlay 0.25s allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  transition:
+    background 0.25s ease,
+    backdrop-filter 0.25s ease;
+}
+
+dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+}
