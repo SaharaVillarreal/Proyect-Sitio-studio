@@ -21,6 +21,7 @@ const openButtons = document.querySelectorAll('[data-modal-target]');
 
 openButtons.forEach((button) => {
     button.addEventListener('click', ()=> {
+      document.body.classList.add('overflow-y-hidden');
         const modalID = button.dataset.modalTarget;
         const modal = document.getElementById(modalID);
         console.log(modal)
@@ -41,7 +42,7 @@ document.querySelectorAll('dialog').forEach((modal) => {
     });
     closeButtons.forEach((button) => {
     button.addEventListener('click', () => {
-
+      document.body.classList.remove('overflow-y-hidden');
       const modal = button.closest('dialog');
 
       if (modal instanceof HTMLDialogElement) {
