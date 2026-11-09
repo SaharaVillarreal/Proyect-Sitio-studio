@@ -13,7 +13,6 @@ openModal.forEach(button => {
     modal?.classList.remove('active');
     document.body.classList.remove('overflow-y-hidden');
 });
-
 // Script del modal della pagina cosa facciamo 
 const openButtons = document.querySelectorAll('[data-modal-target]');
  const closeButtons = document.querySelectorAll('[data-modal-close]');
@@ -54,3 +53,26 @@ document.querySelectorAll('dialog').forEach((modal) => {
 
 });
 
+// MODAL DI CONFERMA RICHIESTA
+
+const formContatto = document.getElementById("form-contatto");
+const successModal = document.getElementById("success-modal");
+const closeSuccessModal = document.getElementById("close-success-modal");
+const clientName = document.getElementById("client-name");
+
+formContatto.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nomeCliente = document.getElementById("name").value.trim();
+
+    clientName.textContent = nomeCliente;
+    successModal.classList.remove("hidden");
+    successModal.classList.add("flex");
+});
+
+closeSuccessModal.addEventListener("click", function() {
+
+    window.location.reload();
+
+});

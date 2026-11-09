@@ -36,22 +36,23 @@ const backgroundImgContact = await getImage({src: imgContatti, format: 'webp'});
     <div class="flex flex-col-reverse lg:flex-row border-t border-[#c2c2c260]">
     <div class="flex flex-col lg:pr-4 py-12">
         <p class="text-lg opacity-80">Compila il modulo e sarai ricontattato in poco tempo per ricevere le informazioni che stai cercando.</p>
-        <form action="" method="post" class="form-contatto flex flex-col py-2">
-            <label for="name" class="opacity-80">Nome e cognome</label>
+        <form id="form-contatto" action="" method="post" class="form-contatto flex flex-col py-2">
+            <label for="name" class="opacity-80">Nome e cognome*</label>
                 <input id="name" name="name" placeholder="Inserisci il tuo nome e cognome" type="text" autocomplete="name" required  class="w-full py-2 px-3 my-2 rounded-full border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300">
-            <label for="email" class="opacity-80">Email</label>
+            <label for="email" class="opacity-80">Email*</label>
                 <input id="email" name="email" placeholder="Inserisci la tua email" type="email" autocomplete="on" required  class="w-full py-2 px-3 my-2 rounded-full border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300">
             <label for="phone" class="opacity-80">Telefono</label>
                 <input id="phone" name="phone" placeholder="Inserisci il tuo numero di telefono" type="tel" autocomplete="tel"  class="w-full py-2 px-3 my-2 rounded-full border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300">
-            <label for="message" class="opacity-80">Richiesta</label>
-                <textarea name="message" id="message" placeholder="Vorrei avere informazione riguardo a...."  class="w-full h-40 py-2 px-3 my-2 rounded-xl border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300"></textarea>    
-        </form>
-        <div class="flex items-start">
-            <input type="checkbox" name="checkbox" id="" class="accent-dark-grey mr-2 mt-1">
+            <label for="message" class="opacity-80">Richiesta*</label>
+                <textarea name="message" id="message" placeholder="Vorrei avere informazione riguardo a...." required class="w-full h-40 py-2 px-3 my-2 rounded-xl border-2 border-black/40 focus:border-green-yellow focus:outline-none transition-all duration-300"></textarea>    
+            <div class="flex items-start">
+            <input type="checkbox" name="privacy" id="privacy" required class="accent-dark-grey mr-2 mt-1">
             <span>Dichiaro di aver letto e compreso l’informativa, ai sensi dell’art. 13 del GDPR, e acconsento al trattamento dei miei dati personali finalizzato alla gestione della mia richiesta di informazioni. 
                 <button id="open-modal" class="open-modal text-dark-grey cursor-pointer underline">Visualizza privacy policy</button>
             </span>
         </div>
+        <button type="submit" class="inline-flex mt-4 mr-4 py-2 px-8 cursor-pointer items-center justify-center text-base font-semibold text-white hover:text-dark-grey border bg-dark-grey border-dark-grey hover:border-white hover:bg-green-yellow rounded-full transition duration-300">Invia richiesta</button>
+            </form>
         <div class="modal scrollbar-none fixed inset-0 bg-black/50 items-center justify-center px-8 overflow-y-hidden z-50">
                 <div class="modal-interno bg-white min-w-2xs max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-xl text-start">
                     <div class="w-full py-4 px-4 lg:px-6 bg-dark-grey flex justify-between items-center">
@@ -71,7 +72,23 @@ const backgroundImgContact = await getImage({src: imgContatti, format: 'webp'});
                     </div>
                 </div>
             </div>
-        <button type="submit" class="inline-flex mt-4 mr-4 py-2 px-8 cursor-pointer items-center justify-center text-base font-semibold text-white hover:text-dark-grey border bg-dark-grey border-dark-grey hover:border-white hover:bg-green-yellow rounded-full transition duration-300">Invia richiesta</button>
+    <div id="success-modal" class="hidden fixed inset-0 z-100 bg-black/60 items-center justify-center px-6">
+    <div class="bg-white w-full max-w-md rounded-xl overflow-hidden shadow-2xl">
+        <div class="bg-green-yellow px-5 py-4 flex justify-between items-center">
+            <h3 class="text-dark-grey text-xl font-semibold">Richiesta inviata!</h3>
+            <button type="button" id="close-success-modal" class="text-dark-grey cursor-pointer" aria-label="Chiudi modal">
+                <svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#1C4E50" stroke-width="1.5"></circle> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C4E50" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+            </button>
+        </div>
+        <div class="px-6 py-8 text-center">
+                <p class="text-dark-grey text-lg mb-4">Grazie <span id="client-name" class="font-bold"></span>!</p>
+                <p class="text-dark-grey text-base leading-relaxed">
+                La tua richiesta è stata inviata correttamente. <br>
+                Ti contatteremo il prima possibile.</p>
+                <p class="text-dark-grey/60 text-sm mt-6">Grazie per aver scelto PROYECTO I.</p>
+              </div>
+            </div> 
+       </div>
     </div>
     <div class="img-contatti w-full h-80 lg:h-auto relative bg-cover bg-center rounded-xl" style={`background-image: url('${backgroundImgContact.src}');`}></div>
 </div> 
